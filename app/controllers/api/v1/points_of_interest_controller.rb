@@ -2,7 +2,9 @@ class Api::V1::PointsOfInterestController < ApplicationController
   respond_to :json
 
   def index
-    respond_with PointOfInterest.all
+      @poi = PointOfInterest.all
+      resposta = {:layer => "findfriendsar",:hotspots => @poi, :errorCode => 0, :errorString => ""}
+      respond_with resposta
   end
 
   def show
