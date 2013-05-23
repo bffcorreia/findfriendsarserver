@@ -12,11 +12,11 @@ class Api::V1::PointsOfInterestController < ApplicationController
   end
 
   def create
-    respond_with PointOfInterest.create(params[:product])
+    respond_with PointOfInterest.create(params[:poi])
   end
 
   def update
-    respond_with PointOfInterest.update(params[:id], params[:product])
+    respond_with PointOfInterest.update(params[:id], params[:poi])
   end
 
   def destroy

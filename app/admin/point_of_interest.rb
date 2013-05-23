@@ -8,6 +8,7 @@ ActiveAdmin.register PointOfInterest do
     column :lat
     column :lon
     column :anchor
+    column :facebook_id
     default_actions
   end
 
@@ -25,6 +26,7 @@ ActiveAdmin.register PointOfInterest do
       f.input :lat
       f.input :lon
       f.input :anchor
+      f.input :facebook_id
     end
     f.buttons
   end
@@ -39,6 +41,7 @@ ActiveAdmin.register PointOfInterest do
       row :lat
       row :lon
       row :anchor
+      row :facebook_id
     end
     active_admin_comments
   end
