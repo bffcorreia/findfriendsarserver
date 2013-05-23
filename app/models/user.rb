@@ -11,4 +11,7 @@ class User < ActiveRecord::Base
   # attr_accessible :title, :body
   
   before_save :ensure_authentication_token
+  
+  has_many :friendships
+  has_many :friends, :through => :friendships
 end
