@@ -5,6 +5,7 @@ ActiveAdmin.register PointOfInterest do
     column :footnote
     column :description
     column :imageURL
+    column :anchor
     column :lat
     column :lon
     default_actions
@@ -21,6 +22,7 @@ ActiveAdmin.register PointOfInterest do
       f.input :footnote
       f.input :description
       f.input :imageURL
+      f.input :anchor
       f.input :lat
       f.input :lon
     end
@@ -34,6 +36,7 @@ ActiveAdmin.register PointOfInterest do
       row :footnote
       row :description
       row :imageURL
+      row :anchor
       row :lat
       row :lon
     end
