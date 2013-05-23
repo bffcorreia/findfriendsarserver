@@ -2,6 +2,7 @@ ActiveAdmin.register User do
   index do
     column :name
     column :email
+    column :facebook_id
     column :current_sign_in_at
     column :last_sign_in_at
     column :sign_in_count
@@ -10,11 +11,13 @@ ActiveAdmin.register User do
 
   filter :name
   filter :email
+  filter :facebook_id
 
   form do |f|
     f.inputs "User Details" do
       f.input :name
       f.input :email
+      f.input :facebook_id
       f.input :password
       f.input :password_confirmation
     end
