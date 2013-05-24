@@ -2,7 +2,11 @@ class Api::V1::PointOfInterestsController < ApplicationController
   respond_to :json
 
   def index
-      @poi = PointOfInterest.user_friends_poi(params[:point_of_interest][:facebook_id])
+      if
+        @poi = PointOfInterest.user_friends_poi(params[:point_of_interest][:facebook_id])
+      else
+        @poi = PointOfInterest.all
+      end
       resposta = {:layer => "findfriendsar",:hotspots => @poi, :errorCode => 0, :errorString => ""}
       respond_with resposta
   end
@@ -12,7 +16,6 @@ class Api::V1::PointOfInterestsController < ApplicationController
   end
 
   def create
-    print "\n\nasdasda#{}\n\n"
     PointOfInterest.create(params[:point_of_interest])
     render :status => 200,
            :json => { :success => true,
