@@ -1,8 +1,8 @@
-class Api::V1::PointsOfInterestController < ApplicationController
+class Api::V1::PointOfInterestController < ApplicationController
   respond_to :json
 
   def index
-      @poi = PointOfInterest.all
+      @poi = PointOfInterest.user_friends_poi(params[:poi][:facebook_id])
       resposta = {:layer => "findfriendsar",:hotspots => @poi, :errorCode => 0, :errorString => ""}
       respond_with resposta
   end

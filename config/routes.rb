@@ -14,6 +14,8 @@ Findfriendsar::Application.routes.draw do
       end
       get 'tasks' => 'tasks#index', :as => 'tasks'
       resources :point_of_interest, defaults: {format: 'json'}
+
+      post 'friendship' => 'friendship#create'
       
     end
   end

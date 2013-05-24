@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130523065329) do
+ActiveRecord::Schema.define(:version => 20130524023914) do
 
   create_table "active_admin_comments", :force => true do |t|
     t.string   "resource_id",   :null => false
@@ -55,15 +55,18 @@ ActiveRecord::Schema.define(:version => 20130523065329) do
   add_index "friendships", ["user_id"], :name => "index_friendships_on_user_id"
 
   create_table "point_of_interests", :force => true do |t|
-    t.string "footnote"
-    t.string "title"
-    t.float  "lat"
-    t.float  "lon"
-    t.string "imageURL"
-    t.string "description"
-    t.string "anchor"
-    t.string "facebook_id"
+    t.string  "footnote"
+    t.string  "title"
+    t.float   "lat"
+    t.float   "lon"
+    t.string  "imageURL"
+    t.string  "description"
+    t.string  "anchor"
+    t.string  "facebook_id"
+    t.integer "user_id"
   end
+
+  add_index "point_of_interests", ["user_id"], :name => "index_point_of_interests_on_user_id"
 
   create_table "users", :force => true do |t|
     t.string   "email",                  :default => "", :null => false
