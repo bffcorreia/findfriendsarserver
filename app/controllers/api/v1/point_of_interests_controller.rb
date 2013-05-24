@@ -2,7 +2,7 @@ class Api::V1::PointOfInterestsController < ApplicationController
   respond_to :json
 
   def index
-      if(params[:point_of_interest][:facebook_id])
+      if(params[:facebook_id])
         @poi = PointOfInterest.user_friends_poi(params[:point_of_interest][:facebook_id])
       else
         @poi = PointOfInterest.all
