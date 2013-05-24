@@ -14,6 +14,7 @@ class PointOfInterest < ActiveRecord::Base
         :footnote => footnote,
         :imageURL => imageURL,
         :title => title,
+        :id => id,
         :anchor => { :geolocation => { :lat => lat , :lon =>lon} }
       }
   end
