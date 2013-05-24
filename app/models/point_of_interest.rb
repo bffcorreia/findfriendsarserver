@@ -10,6 +10,6 @@ class PointOfInterest < ActiveRecord::Base
   end
   private
     def add_user_id
-      self.user_id = User.find_by_facebook_id(self.facebook_id).id
+      self.user_id = User.find_by_facebook_id(self.facebook_id).id if self.facebook_id
     end
 end

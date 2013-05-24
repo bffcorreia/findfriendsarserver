@@ -12,7 +12,10 @@ class Api::V1::PointOfInterestsController < ApplicationController
   end
 
   def create
-    respond_with PointOfInterest.create(params[:point_of_interest])
+    PointOfInterest.create(params[:point_of_interest])
+    render :status => 200,
+           :json => { :success => true,
+                      :info => "point_of_interest created"}
   end
 
   def update
