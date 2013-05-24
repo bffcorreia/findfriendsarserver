@@ -8,6 +8,18 @@ class PointOfInterest < ActiveRecord::Base
     user.friends.map {|friend| friend.point_of_interests.map{|poi| a << poi}}
     a
   end
+  def as_json(options={})
+      {
+        :description => description,
+        :footnote => footnote,
+        :imageURL => imageURL,
+        :lat => lat,
+        :lon => lon,
+        :title => title,
+        :anchor => anchor,
+      }
+  end
+  
   private
     def add_user_id
       print "\nNo add_user_id com facebook_id = #{self.facebook_id}\n"
