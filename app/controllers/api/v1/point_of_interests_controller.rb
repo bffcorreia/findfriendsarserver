@@ -12,6 +12,7 @@ class Api::V1::PointOfInterestsController < ApplicationController
   end
 
   def create
+    print "\n\nasdasda#{}\n\n"
     PointOfInterest.create(params[:point_of_interest])
     render :status => 200,
            :json => { :success => true,

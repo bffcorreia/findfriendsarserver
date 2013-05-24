@@ -3,7 +3,9 @@ Find Friends AR
 
 
 ## criar user ##
-	`curl -v -H 'Content-Type: application/json' -H 'Accept: application/json' -X POST http://0.0.0.0:3000/api/v1/registrations -d "{\"user\":{\"email\":\"user3@example.com\",\"name\":\"anotheruser3\",\"password\":\"secret\",\"password_confirmation\":\"secret\",\"facebook_id\":\"1234\"}}"`
+	```
+	curl -v -H 'Content-Type: application/json' -H 'Accept: application/json' -X POST http://0.0.0.0:3000/api/v1/registrations -d "{\"user\":{\"email\":\"user3@example.com\",\"name\":\"anotheruser3\",\"password\":\"secret\",\"password_confirmation\":\"secret\",\"facebook_id\":\"1234\"}}"
+	```
 
 	e receber o Authorization, exemplo 93eMa9yQCAGeR7Rbq6rE 
 ## login ##
