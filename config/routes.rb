@@ -13,7 +13,7 @@ Findfriendsar::Application.routes.draw do
         delete 'sessions' => 'sessions#destroy', :as => 'logout'
       end
       get 'tasks' => 'tasks#index', :as => 'tasks'
-      resources :point_of_interest, defaults: {format: 'json'}
+      resources :point_of_interests, defaults: {format: 'json'}
 
       post 'friendship' => 'friendship#create'
       
