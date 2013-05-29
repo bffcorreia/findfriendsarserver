@@ -7,7 +7,7 @@ class Api::V1::PointOfInterestsController < ApplicationController
       else
         @poi = PointOfInterest.all
       end
-      resposta = {:layer => "findfriendsar",:hotspots => @poi, :errorCode => 0, :errorString => "ok"}
+      resposta = "poi" => {:layer => "findfriendsar",:hotspots => @poi, :errorCode => 0, :errorString => "ok"}
       respond_with resposta
   end
 
