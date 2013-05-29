@@ -10,12 +10,11 @@ class PointOfInterest < ActiveRecord::Base
   end
   def as_json(options={})
       {
-        :description => description,
-        :footnote => footnote,
-        :imageURL => imageURL,
-        :title => title,
         :id => id,
-        :anchor => { :geolocation => { :lat => lat , :lon =>lon} }
+        :anchor => { :geolocation => { :lat => lat , :lon =>lon} },
+        :text => { :title => title, :desciption => description, :footnote => footnote},
+        :imageURL => imageURL,
+        :icon => { :url => imageURL, :type => 2}
       }
   end
   
