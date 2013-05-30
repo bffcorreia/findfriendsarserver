@@ -26,7 +26,7 @@ ActiveAdmin.register PointOfInterest do
       f.input :lat
       f.input :lon
       f.input :anchor
-      f.input :facebook_id
+      f.input :facebook_id, :as => :select, :collection => User.all
     end
     f.buttons
   end
